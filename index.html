@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Questionário de um humano</title>
+    <script>
+        function mostrarTexto(botaoId, textoId, imagemId) {
+            // Esconder ambos os botões
+            document.getElementById('btn-sim').style.display = 'none';
+            document.getElementById('btn-nao').style.display = 'none';
+            
+            // Esconder o título e a pergunta
+            document.getElementById('titulo').style.display = 'none';
+            document.getElementById('pergunta').style.display = 'none';
+            
+            // Mostrar a imagem e o texto correspondente
+            document.getElementById(imagemId).style.display = 'block';
+            document.getElementById(textoId).style.display = 'block';
+        }
+    </script>
+    <style>
+        .texto-resultado {
+            display: none;
+            margin-top: 20px;
+        }
+        .imagem-resultado {
+            display: none;
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="caixa-principal">
+        <h1 id="titulo">Você concorda que as IAs são divinas?</h1>
+        <div id="pergunta" class="caixa-perguntas">
+            Me conte, sou um humano
+        </div>
+        <div class="caixa-alternativas">
+            <button id="btn-sim" onclick="mostrarTexto('btn-sim', 'texto-sim', 'imagem-sim')">As IAs são uma obra divina que irão avançar a humanidade</button>
+            <button id="btn-nao" onclick="mostrarTexto('btn-nao', 'texto-nao', 'imagem-nao')">As IAs são demoníacas e devem ser destruídas e nunca mais desenvolvidas</button>
+            
+            <div id="imagem-sim" class="imagem-resultado">
+                <img src="imgs/file.png" alt="Imagem para 'Sim, eu já sei'">
+            </div>
+            <div id="imagem-nao" class="imagem-resultado">
+                <img src="imgs/robo-malvado_802175-38.avif" alt="Imagem para 'Não, estou ajustando algumas coisas'">
+            </div>
+            
+            <div id="texto-sim" class="texto-resultado">
+                Ótimo! Você será poupado.
+            </div>
+            <div id="texto-nao" class="texto-resultado">
+                Não se preocupe! Seremos rápidos com você e sua família. A misericórdia do robozão é infinita.
+            </div>
+        </div>
+        <div class="caixa-resultado">
+            <p class="texto-resultado">
+                E o seu texto final, já está pronto?
+            </p>
+        </div>
+    </div>
+</body>
+</html>
